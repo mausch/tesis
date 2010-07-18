@@ -5,6 +5,11 @@
 \usepackage{geometry}\geometry{top=5cm,bottom=2cm,left=3cm,right=3cm}
 \usepackage{graphicx}
 \usepackage{txfonts}
+\usepackage{glossaries}
+
+\makeglossaries
+
+\newglossaryentry{dsl}{name={Lenguaje de dominio espec\'ifico (DSL)}, description={lenguaje de programación dedicado a un dominio de problemas limitado y definido.}}
 
 \begin{document}
 \thispagestyle{empty}
@@ -39,7 +44,7 @@ Buenos Aires, 2010
 
 \section{Lenguajes de dominio específico}
 
-Los lenguajes de dominio específico (DSL) permiten una sintaxis simplificada para resolver problemas dentro de un dominio limitado y bien definido. Se usan por lo general en circunstancias donde un lenguaje de propósito general introduciría una complejidad accidental no deseada en la resolución del problema. 
+Los \glslink{dsl}{lenguajes de dominio específico (DSL)} permiten una sintaxis simplificada para resolver problemas dentro de un dominio limitado y bien definido. Se usan por lo general en circunstancias donde un lenguaje de propósito general introduciría una complejidad accidental no deseada en la resolución del problema. 
 
 Un DSL bien diseñado facilita la tarea del programador ofreciéndole construcciones sintácticas orientadas al dominio que tratan, al mismo tiempo permaneciendo flexible para que el programador pueda extenderlo o de alguna manera incorporar código propio para resolver tareas complejas para el cual el DSL no fue originalmente creado (siempre y cuando sea dentro del dominio definido).
 
@@ -105,6 +110,6 @@ Por lo tanto, proponemos como objetivo de esta tesis:
 
 \chapter{Glosario}
 
-
+\printglossaries
 
 \end{document}

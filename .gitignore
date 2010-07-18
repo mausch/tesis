@@ -5,3 +5,11 @@
 *.aux
 *.blg
 *.tps
+*.acn
+*.glg
+*.glo
+*.gls
+*.idx
+*.ilg
+*.ind
+*.ist
