@@ -1,4 +1,4 @@
-\documentclass[12pt]{book}
+\documentclass[12pt]{article}
 \usepackage[spanish]{babel}
 \usepackage{ucs}
 \usepackage[utf8x]{inputenc}
@@ -40,9 +40,9 @@ Buenos Aires, 2010
 
 \newpage
 
-\chapter*{Introducción}
+\section{Introducción}
 
-\section{Lenguajes de dominio específico}
+\subsection{Lenguajes de dominio específico}
 
 Los \glslink{dsl}{lenguajes de dominio específico (DSL)} permiten una sintaxis simplificada para resolver problemas dentro de un dominio limitado y bien definido. Se usan por lo general en circunstancias donde un lenguaje de propósito general introduciría una complejidad accidental no deseada en la resolución del problema. 
 
@@ -54,22 +54,22 @@ La práctica extendida de crear una aplicación entera basada en distintos DSLs 
 
 Uno de los DSLs más difundidos actualmente es SQL (Structured Query Language), que tiene construcciones sintácticas específicas orientadas a manejar bases de datos relacionales.
 
-\subsection{DSLs externos}
+\subsubsection{DSLs externos}
 
 Los DSLs externos se implementan definiendo una sintaxis y luego generando un parser y lexer para procesar el código fuente y generar un AST (abstract syntax tree). La ventaja principal de esta modalidad de DSL es la mayor flexibilidad para definir la sintaxis y la independencia del lenguaje host sobre el cual está implementado.
 
-\subsection{DSLs internos}
+\subsubsection{DSLs internos}
 
 Los DSLs internos o embebidos se implementan aprovechando directamente la sintaxis y compilador del lenguaje host. La ventaja de esta modalidad es una mayor facilidad para implementar y ejecutar el DSL. Los usuarios no necesitan aprender una sintaxis nueva.
 
-\section{Frameworks Web}
+\subsection{Frameworks Web}
 
 Una típica aplicación web tiene una arquitectura naturalmente desacoplada, con una variedad de tecnologías en cada capa: HTML y CSS en la capa de presentación (browser), JavaScript a veces colaborando en la capa de presentación y otras veces implementando parte de la lógica del programa dentro del browser, y finalmente el código de servidor. El protocolo usado para comunicar cliente y servidor es HTTP (Hypertext Transfer Protocol).
 
 Un framework web tiene como objetivo unificar todas estas tecnologías y capas dentro de una aplicación y ambiente de programación, ofreciendo una estructura coherente al programador pero al mismo sin crear un excesivo acoplamiento de estas capas. Algunas de las características que un framework web ofrece al programador para su aplicación son: seguridad, mapeo de URLs, acceso a bases de datos, configuración, cache, sistema de plantillas para generación de HTML. No todos los frameworks web implementan todas estas características, algunos las delegan a la infraestructura de la plataforma u otro framework externo.
 
 
-\chapter{Estado del arte}
+\section{Estado del arte}
 
 En la actualidad existen literalmente decenas de frameworks para desarollo web, en una multitud de plataformas y lenguajes: Ruby, Python, Java, .NET, Haskell... Cada uno diseñado tratando de explotar las particularidades del lenguaje/plataforma sobre el que está implementado. Así, por ejemplo, los frameworks en Ruby tienden a aprovechar las facilidades de metaprogramación del lenguaje mientras que en Haskell se chequea todo estáticamente aprovechando el rico sistema de tipos.
 
@@ -95,7 +95,7 @@ En F\# existen varios frameworks web:
 	\end{itemize}
 \end{itemize}
 
-\chapter{Objetivo de la tesis}
+\section{Objetivo de la tesis}
 
 Los frameworks web para F\# mencionados anteriormente son mayormente orientados a objetos. Si bien F\# es un lenguaje multiparadigma, soportando el paradigma orientado a objetos tanto como el funcional, sus raíces en ML hacen que en la práctica sea más funcional que orientado a objetos.
 
@@ -106,9 +106,7 @@ Por lo tanto, proponemos como objetivo de esta tesis:
 	\item Utilizando la información obtenida de los pasos anteriores, desarrollar un framework funcional para F\#. 
 \end{itemize}
 
-\chapter{Plan de trabajo}
-
-\chapter{Glosario}
+\section{Plan de trabajo}
 
 \printglossaries
 
