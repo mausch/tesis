@@ -11,27 +11,21 @@
 
 \begin {center}
 
-\includegraphics[scale=.7]{logo_fiuba_alta.jpg}
+\includegraphics[scale=1]{logo_fiuba_alta.jpg}
 
-\medskip
-UNIVERSIDAD DE BUENOS AIRES
-
-Facultad de Ingeniería
-
-Departamento de Computación
 
 \vspace{3cm}
 
 \textbf{\large Propuesta de tesis de grado en Ingeniería en Informática}
 
-
+\vspace{3cm}
 
 \textbf{\large Lenguaje de dominio específico embebido para aplicaciones web en un lenguaje multiparadigma funcional - orientado a objetos.}
 
 \vspace{2cm}
 
 \end {center}
-\vspace{1.5cm}
+\vspace{3cm}
 
 Alumno: Mauricio Scheffer
 
@@ -40,6 +34,77 @@ Director de tesis: Rosa Wachenchauzer
 Buenos Aires, 2010
 
 \newpage
+
+\chapter*{Introducción}
+
+\section{Lenguajes de dominio específico}
+
+Los lenguajes de dominio específico (DSL) permiten una sintaxis simplificada para resolver problemas dentro de un dominio limitado y bien definido. Se usan por lo general en circunstancias donde un lenguaje de propósito general introduciría una complejidad accidental no deseada en la resolución del problema. 
+
+Un DSL bien diseñado facilita la tarea del programador ofreciéndole construcciones sintácticas orientadas al dominio que tratan, al mismo tiempo permaneciendo flexible para que el programador pueda extenderlo o de alguna manera incorporar código propio para resolver tareas complejas para el cual el DSL no fue originalmente creado (siempre y cuando sea dentro del dominio definido).
+
+Un DSL va más allá de una librería en que presenta al programador una interfaz orientada al lenguaje, es decir, construcciones sintácticas específicas.
+
+La práctica extendida de crear una aplicación entera basada en distintos DSLs se denomina “programación orientada al lenguaje” (Language-oriented programming) [DUN1]. Ciertos lenguajes, como Lisp, se prestan naturalmente a este estilo de programación.
+
+Uno de los DSLs más difundidos actualmente es SQL (Structured Query Language), que tiene construcciones sintácticas específicas orientadas a manejar bases de datos relacionales.
+
+\subsection{DSLs externos}
+
+Los DSLs externos se implementan definiendo una sintaxis y luego generando un parser y lexer para procesar el código fuente y generar un AST (abstract syntax tree). La ventaja principal de esta modalidad de DSL es la mayor flexibilidad para definir la sintaxis y la independencia del lenguaje host sobre el cual está implementado.
+
+\subsection{DSLs internos}
+
+Los DSLs internos o embebidos se implementan aprovechando directamente la sintaxis y compilador del lenguaje host. La ventaja de esta modalidad es una mayor facilidad para implementar y ejecutar el DSL. Los usuarios no necesitan aprender una sintaxis nueva.
+
+\section{Frameworks Web}
+
+Una típica aplicación web tiene una arquitectura naturalmente desacoplada, con una variedad de tecnologías en cada capa: HTML y CSS en la capa de presentación (browser), JavaScript a veces colaborando en la capa de presentación y otras veces implementando parte de la lógica del programa dentro del browser, y finalmente el código de servidor. El protocolo usado para comunicar cliente y servidor es HTTP (Hypertext Transfer Protocol).
+
+Un framework web tiene como objetivo unificar todas estas tecnologías y capas dentro de una aplicación y ambiente de programación, ofreciendo una estructura coherente al programador pero al mismo sin crear un excesivo acoplamiento de estas capas. Algunas de las características que un framework web ofrece al programador para su aplicación son: seguridad, mapeo de URLs, acceso a bases de datos, configuración, cache, sistema de plantillas para generación de HTML. No todos los frameworks web implementan todas estas características, algunos las delegan a la infraestructura de la plataforma u otro framework externo.
+
+
+\chapter{Estado del arte}
+
+En la actualidad existen literalmente decenas de frameworks para desarollo web, en una multitud de plataformas y lenguajes: Ruby, Python, Java, .NET, Haskell... Cada uno diseñado tratando de explotar las particularidades del lenguaje/plataforma sobre el que está implementado. Así, por ejemplo, los frameworks en Ruby tienden a aprovechar las facilidades de metaprogramación del lenguaje mientras que en Haskell se chequea todo estáticamente aprovechando el rico sistema de tipos.
+
+Más allá de estas particularidades, una arquitectura usada por muchos frameworks es la MVC (Model View Controller), ya que permite una buena separación de responsabilidades entre el modelo de datos, la interfaz del usuario y la lógica del programa. Esto redunda en un menor acoplamiento y mayor cohesión, independientemente de la plataforma o del paradigma del lenguaje.
+
+Por otra parte, la aplicación de DSLs al diseño de frameworks web ya probó ser un camino viable y conveniente, si bien todavía no es de uso masivo. Algunos ejemplos son Sinatra [SIN1] (Ruby), Happstack [HAP1] (Haskell), Compojure [COM1] (Clojure) y GroovyRestlet [GRO1] (Groovy).
+
+En F\# existen varios frameworks web:
+
+\begin{itemize}
+	\item Ya que F\# es un lenguaje de primer nivel en .NET, cualquier framework que funcione en C\# / VB.NET funcionará también en F\#, por ejemplo:
+	\begin{itemize}
+		\item ASP.NET Web Forms [ASP1]
+		\item ASP.NET MVC [ASP2]
+		\item Castle MonoRail [CMR1]
+		\item Bistro [BIS1] (que tiene algunas facilidades específicas para F\# [BIS2])
+	\end{itemize}
+	\item Los frameworks específicos para F\# son:
+	\begin{itemize}
+		\item WebSharper [WSH1]
+		\item F\# Web Tools [FWT1]
+		\item \#light [SHL1]
+	\end{itemize}
+\end{itemize}
+
+\chapter{Objetivo de la tesis}
+
+Los frameworks web para F\# mencionados anteriormente son mayormente orientados a objetos. Si bien F\# es un lenguaje multiparadigma, soportando el paradigma orientado a objetos tanto como el funcional, sus raíces en ML hacen que en la práctica sea más funcional que orientado a objetos.
+
+Por lo tanto, proponemos como objetivo de esta tesis:
+\begin{itemize}
+	\item Explorar los conceptos que debería tener un framework web para aprovechar las características funcionales de F\#.
+	\item Comparar estas características con las de los frameworks web ya existentes mencionados anteriormente.
+	\item Utilizando la información obtenida de los pasos anteriores, desarrollar un framework funcional para F\#. 
+\end{itemize}
+
+\chapter{Plan de trabajo}
+
+\chapter{Glosario}
+
 
 
 \end{document}
