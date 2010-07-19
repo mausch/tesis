@@ -10,6 +10,21 @@
 \makeglossaries
 
 \newglossaryentry{dsl}{name={Lenguaje de dominio espec\'ifico (DSL)}, description={lenguaje de programación dedicado a un dominio de problemas limitado y definido.}}
+\newglossaryentry{embedded}{name={Lenguaje embebido (\textit{embedded language})}, description={se denomina lenguaje embebido aquel que se incorpora directamente en un código fuente escrito en otro lenguaje (denominado lenguaje \textit{host}). En relación al lenguaje \textit{host}, el lenguaje embebido se denomina lenguaje \textit{guest}.}}
+\newglossaryentry{edsl}{name={EDSL (embedded domain-specific language)}, description={lenguaje de dominio específico embebido en un lenguaje host.}}
+\newglossaryentry{ast}{name={\'{A}rbol de sintaxis abstracta (abstract syntax tree o AST)}, description={estructura sintáctica de un código fuente representada en un árbol, donde cada nodo representa un token o partícula sintáctica. Convertir el código fuente de un AST es uno de los primeros pasos de un compilador.}}
+\newglossaryentry{functional}{name={Programac\'on funcional}, description={paradigma de programación que tiende a modelar los procesos de computación como funciones matemáticas. A diferencia del paradigma imperativo, evita los estados mutables.}}
+\newglossaryentry{multiparadigm}{name={Lenguaje de programación multiparadigma}, description={lenguaje de programación que soporta dos o más paradigmas (funcional, imperativo, orientado a objetos, lógico, etc).}}
+
+\newglossaryentry{fsharp}{name={F\#}, description={lenguaje de programación creado por Microsoft. Fuertemente influenciado por OCaml (otro dialecto de la familia de lenguajes ML), es también un lenguaje multiparadigma ya que abarca los paradigmas funcional e imperativo orientado a objetos. Es multiplataforma: los programas escritos en F\# corren sobre .NET (Windows) como en Mono (GNU/Linux, BSD, Solaris y otros sistemas operativos).}}
+
+\newglossaryentry{ruby}{name={Ruby}, description={lenguaje de programación multiparadigma, aunque principalmente orientado a objetos. Sistema de tipos dinámico.}}
+\newglossaryentry{haskell}{name=Haskell, description={lenguaje de programación funcional puro, con fuerte sistema de tipos estático.}}
+\newglossaryentry{groovy}{name=Groovy, description={lenguaje de programación orientado a objetos, de tipos dinámicos, que corre en JVM (Java Virtual Machine). Similar a Python y Ruby.}}
+
+\newglossaryentry{clojure}{name=Clojure, description={lenguaje de programación, dialecto de Lisp que corre en JVM.}}
+
+\newglossaryentry{repl}{name={REPL (read-eval-print loop)}, description={ambiente de programación interactivo que ejecuta un ciclo (loop) donde en primer lugar lee (read) la instrucción ingresada por el programador, inmediatamente la evalúa (eval), compilando o interpretando la expresión según sea necesario y finalmente muestra inmediatamente (print) el resultado de evaluar la expresión.}}
 
 \begin{document}
 \thispagestyle{empty}
@@ -56,11 +71,11 @@ Uno de los DSLs más difundidos actualmente es SQL (Structured Query Language), 
 
 \subsubsection{DSLs externos}
 
-Los DSLs externos se implementan definiendo una sintaxis y luego generando un parser y lexer para procesar el código fuente y generar un AST (abstract syntax tree). La ventaja principal de esta modalidad de DSL es la mayor flexibilidad para definir la sintaxis y la independencia del lenguaje host sobre el cual está implementado.
+Los DSLs externos se implementan definiendo una sintaxis y luego generando un parser y lexer para procesar el código fuente y generar un \glslink{ast}{AST} (abstract syntax tree). La ventaja principal de esta modalidad de DSL es la mayor flexibilidad para definir la sintaxis y la independencia del lenguaje host sobre el cual está implementado.
 
 \subsubsection{DSLs internos}
 
-Los DSLs internos o embebidos se implementan aprovechando directamente la sintaxis y compilador del lenguaje host. La ventaja de esta modalidad es una mayor facilidad para implementar y ejecutar el DSL. Los usuarios no necesitan aprender una sintaxis nueva.
+Los DSLs internos o \glslink{embedded}{embebidos} se implementan aprovechando directamente la sintaxis y compilador del lenguaje host. La ventaja de esta modalidad es una mayor facilidad para implementar y ejecutar el DSL. Los usuarios no necesitan aprender una sintaxis nueva.
 
 \subsection{Frameworks Web}
 
@@ -75,9 +90,9 @@ En la actualidad existen literalmente decenas de frameworks para desarollo web, 
 
 Más allá de estas particularidades, una arquitectura usada por muchos frameworks es la MVC (Model View Controller), ya que permite una buena separación de responsabilidades entre el modelo de datos, la interfaz del usuario y la lógica del programa. Esto redunda en un menor acoplamiento y mayor cohesión, independientemente de la plataforma o del paradigma del lenguaje.
 
-Por otra parte, la aplicación de DSLs al diseño de frameworks web ya probó ser un camino viable y conveniente, si bien todavía no es de uso masivo. Algunos ejemplos son Sinatra [SIN1] (Ruby), Happstack [HAP1] (Haskell), Compojure [COM1] (Clojure) y GroovyRestlet [GRO1] (Groovy).
+Por otra parte, la aplicación de DSLs al diseño de frameworks web ya probó ser un camino viable y conveniente, si bien todavía no es de uso masivo. Algunos ejemplos son Sinatra [SIN1] (\gls{ruby}), Happstack [HAP1] (\gls{haskell}), Compojure [COM1] (\gls{clojure}) y GroovyRestlet [GRO1] (\gls{groovy}).
 
-En F\# existen varios frameworks web:
+En \glslink{fsharp}{F\#} existen varios frameworks web:
 
 \begin{itemize}
 	\item Ya que F\# es un lenguaje de primer nivel en .NET, cualquier framework que funcione en C\# / VB.NET funcionará también en F\#, por ejemplo:
@@ -97,7 +112,7 @@ En F\# existen varios frameworks web:
 
 \section{Objetivo de la tesis}
 
-Los frameworks web para F\# mencionados anteriormente son mayormente orientados a objetos. Si bien F\# es un lenguaje multiparadigma, soportando el paradigma orientado a objetos tanto como el funcional, sus raíces en ML hacen que en la práctica sea más funcional que orientado a objetos.
+Los frameworks web para F\# mencionados anteriormente son mayormente orientados a objetos. Si bien F\# es un lenguaje \glslink{multiparadigm}{multiparadigma}, soportando el paradigma orientado a objetos tanto como el funcional, sus raíces en ML hacen que en la práctica sea más funcional que orientado a objetos.
 
 Por lo tanto, proponemos como objetivo de esta tesis:
 \begin{itemize}
