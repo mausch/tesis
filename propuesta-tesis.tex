@@ -1,4 +1,5 @@
 \documentclass[12pt]{article}
+\usepackage{url}
 \usepackage[spanish]{babel}
 \usepackage{ucs}
 \usepackage[utf8x]{inputenc}
@@ -6,6 +7,7 @@
 \usepackage{graphicx}
 \usepackage{txfonts}
 \usepackage{glossaries}
+\usepackage{hyperref}
 
 \makeglossaries
 
@@ -13,7 +15,7 @@
 \newglossaryentry{embedded}{name={Lenguaje embebido (\textit{embedded language})}, description={se denomina lenguaje embebido aquel que se incorpora directamente en un código fuente escrito en otro lenguaje (denominado lenguaje \textit{host}). En relación al lenguaje \textit{host}, el lenguaje embebido se denomina lenguaje \textit{guest}.}}
 \newglossaryentry{edsl}{name={EDSL (embedded domain-specific language)}, description={lenguaje de dominio específico embebido en un lenguaje host.}}
 \newglossaryentry{ast}{name={\'{A}rbol de sintaxis abstracta (abstract syntax tree o AST)}, description={estructura sintáctica de un código fuente representada en un árbol, donde cada nodo representa un token o partícula sintáctica. Convertir el código fuente de un AST es uno de los primeros pasos de un compilador.}}
-\newglossaryentry{functional}{name={Programac\'on funcional}, description={paradigma de programación que tiende a modelar los procesos de computación como funciones matemáticas. A diferencia del paradigma imperativo, evita los estados mutables.}}
+\newglossaryentry{functional}{name={Programaci\'on funcional}, description={paradigma de programación que tiende a modelar los procesos de computación como funciones matemáticas. A diferencia del paradigma imperativo, evita los estados mutables.}}
 \newglossaryentry{multiparadigm}{name={Lenguaje de programación multiparadigma}, description={lenguaje de programación que soporta dos o más paradigmas (funcional, imperativo, orientado a objetos, lógico, etc).}}
 
 \newglossaryentry{fsharp}{name={F\#}, description={lenguaje de programación creado por Microsoft. Fuertemente influenciado por OCaml (otro dialecto de la familia de lenguajes ML), es también un lenguaje multiparadigma ya que abarca los paradigmas funcional e imperativo orientado a objetos. Es multiplataforma: los programas escritos en F\# corren sobre .NET (Windows) como en Mono (GNU/Linux, BSD, Solaris y otros sistemas operativos).}}
@@ -97,16 +99,16 @@ En \glslink{fsharp}{F\#} existen varios frameworks web:
 \begin{itemize}
 	\item Ya que F\# es un lenguaje de primer nivel en .NET, cualquier framework que funcione en C\# / VB.NET funcionará también en F\#, por ejemplo:
 	\begin{itemize}
-		\item ASP.NET Web Forms [ASP1]
-		\item ASP.NET MVC [ASP2]
-		\item Castle MonoRail [CMR1]
-		\item Bistro [BIS1] (que tiene algunas facilidades específicas para F\# [BIS2])
+		\item ASP.NET Web Forms \cite{webforms}
+		\item ASP.NET MVC \cite{mvc}
+		\item Castle MonoRail \cite{monorail}
+		\item Bistro \cite{bistro} (que tiene algunas facilidades específicas para F\# \cite{bistroext})
 	\end{itemize}
 	\item Los frameworks específicos para F\# son:
 	\begin{itemize}
-		\item WebSharper [WSH1]
-		\item F\# Web Tools [FWT1]
-		\item \#light [SHL1]
+		\item WebSharper \cite{websharper}
+		\item F\# Web Tools \cite{fswebtools}
+		\item \#light \cite{sharplight}
 	\end{itemize}
 \end{itemize}
 
@@ -124,5 +126,8 @@ Por lo tanto, proponemos como objetivo de esta tesis:
 \section{Plan de trabajo}
 
 \printglossaries
+
+\bibliographystyle{plain}
+\bibliography{propuesta-tesis}
 
 \end{document}

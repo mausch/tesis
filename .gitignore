@@ -13,3 +13,5 @@
 *.ilg
 *.ind
 *.ist
+*.bbl
+*.out
