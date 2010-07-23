@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<compile>
+  <token>449fba946257d3b1abe034e644ec3e3d</token>
+
+  <options>
+    <compiler>pdflatex</compiler>
+    <output-format>pdf</output-format>
+  </options>
+
+  <resources root-resource-path='propuesta-tesis.tex'>
+    <resource path="propuesta-tesis.bib" url="http://github.com/mausch/Figment/raw/master/propuesta-tesis.bib"/>
+    <resource path="propuesta-tesis.tex" url="http://github.com/mausch/Figment/raw/master/propuesta-tesis.tex"/>
+    <resource path='logo_fiuba_alta.jpg' url='http://github.com/mausch/Figment/raw/master/logo_fiuba_alta.jpg'  modified='2010-01-16 19:28' />
+  </resources>
+</compile>
