@@ -83,6 +83,39 @@ Refs:
 
 \chapter{Frameworks web}
 
+\subsection{WebSharper}
+
+WebSharper \cite{websharper} es una plataforma en F\# para desarrollo web. Sus características incluyen: \cite{websharperdocs}
+
+\begin{itemize}
+	\item Compilación de F\# a JavaScript.
+	\item Implementación de formlets \cite{CLWY08essence} \cite{CLWY08idiomsguide}.
+	\item Soporte de comunicación cliente-servidor.
+	\item Soporte de una gran parte de la librería standard de F\# in .NET en el cliente.
+	\item Programación type-safe 
+	\item Facilidades para incorporar código JavaScript y librerías JavaScript externas.
+	\item Facilidades para manejo de recursos y dependencias para CSS, imágenes, etc.
+	\item Integración con ASP.NET
+	\item Integración con Microsoft Visual Studio.
+\end{itemize}
+
+Como se ve de la lista de características mencionadas, el principal objetivo de WebSharper es la creación de aplicaciones RIA (rich internet applications) \cite{busch2009rich} y no tanto sitios web en general, en forma similar a otras plataformas como Adobe Flash \cite{flash} o Microsoft Silverlight \cite{silverlight}, pero sin requerir un plugin especial. En cambio, hace hincapié en la generación de código JavaScript a partir de código F\#, en forma similar a F\# Web Tools \cite{petricek-client}, Script\# \cite{scriptsharp} o Google Web Toolkit \cite{gwt}. Algunas ventajas de este enfoque son:
+
+\begin{itemize}
+	\item Rápida integración de código del cliente (JavaScript)
+	\item Programación de toda la aplicación en un único lenguaje y ambiente.
+	\item Típicamente disminuyen el tiempo de respuesta (latencia) en la comunicación cliente-servidor, ya que reducen la cantidad necesaria de datos a transferir.
+\end{itemize}
+
+Desventajas:
+
+\begin{itemize}
+	\item Requieren un paso adicional de compilación.
+	\item Generan una gran cantidad de código JavaScript que debe ser transferido inicialmente al cliente.
+	\item Incrementan el acoplamiento de las capas naturalmente desacopladas de una aplicación web.
+	\item Al no ajustarse totalmente al modelo HTTP, dificultan ciertas funcionalidades básicas, como el soporte del botón ``Volver`` de los browsers.
+\end{itemize}
+
 \chapter{Hacia un DSL para desarrollo web en un lenguaje funcional}
 
 Para diseñar el DSL propuesto en este trabajo, empecemos con la metodología propuesta en \cite{van1998little}:
@@ -102,7 +135,7 @@ Elegimos la modalidad de DSL embebido para implementar nuestro DSL por las venta
 
 Diseñaremos nuestro DSL sobre la infraestructura de ASP.NET MVC \cite{mvc}, esta infraestructura ya encapsula el conocimiento del dominio, sus conceptos y operaciones. 
 Como mencionamos anteriormente, una aplicación web se compone de varias tecnologías disímiles débilmente acopladas. Diseñaremos nuestro DSL con el objetivo de orquestrar las operaciones a ejecutar en el servidor, delegando la generación de la vista (HTML / CSS) a otros frameworks. ASP.NET MVC permite reemplazar fácilmente el generador de vistas \cite{mvcrender}, por lo cual nuestra solución podría usarse con generadores como Web Forms, Spark \cite{spark}, Brail \cite{brail} o Hasic \cite{hasic}. A los efectos de representar todos los aspectos de una aplicación en un único lenguaje, utilizaremos Wing Beats \cite{wingbeats} como generador de vistas en los ejemplos y aplicación de referencia.
-También delegaremos otro componente que a veces se incluye en un framework web: el acceso a datos
+También delegaremos otro componente que a veces se incluye en un framework web: el acceso a datos.
 
 \addcontentsline{toc}{chapter}{Referencias}
 \bibliographystyle{plain}
